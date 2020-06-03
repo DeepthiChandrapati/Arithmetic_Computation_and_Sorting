@@ -12,8 +12,12 @@ SecondComputation=$(( $a * $b + $c ));
 
 ThirdComputation=$(( $c + $a / $b ));
 
+FourthComputation=$(( $a % $b + $c ));
+
 echo "First Computation is : $FirstComputation"
 
 echo "Second Computation is : $SecondComputation"
 
 echo "Third Computation is: $ThirdComputation"
+
+echo "Fourth Computation is: $FourthComputation"
