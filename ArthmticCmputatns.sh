@@ -26,4 +26,4 @@ echo "Fourth Computation is: $Fourth"
 
 Result=( ["First"]="$First" ["Second"]="$Second"  ["Third"]="$Third"  ["Fourth"]="$Fourth" )
 
-
+echo "Results   ${Result[@]}" 
