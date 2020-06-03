@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/usr/local/bin/bash -x
 
 echo "Welcome to Arithmetic Computations Program "
 
@@ -6,18 +6,24 @@ read -p "Enter a:  " a
 read -p "Enter b:  " b
 read -p "Enter c:  " c
 
-FirstComputation=$(( $a + $b * $c ));
+declare -A Result
 
-SecondComputation=$(( $a * $b + $c ));
+First="$(( $a + $b * $c ))"
 
-ThirdComputation=$(( $c + $a / $b ));
+Second="$(( $a * $b + $c ))"
 
-FourthComputation=$(( $a % $b + $c ));
+Third="$(( $c + $a / $b ))"
 
-echo "First Computation is : $FirstComputation"
+Fourth="$(( $a % $b + $c ))"
 
-echo "Second Computation is : $SecondComputation"
+echo "First Computation is : $First"
 
-echo "Third Computation is: $ThirdComputation"
+echo "Second Computation is : $Second"
 
-echo "Fourth Computation is: $FourthComputation"
+echo "Third Computation is: $Third"
+
+echo "Fourth Computation is: $Fourth"
+
+Result=( ["First"]="$First" ["Second"]="$Second"  ["Third"]="$Third"  ["Fourth"]="$Fourth" )
+
+
