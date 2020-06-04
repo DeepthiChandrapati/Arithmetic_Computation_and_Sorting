@@ -1,4 +1,4 @@
-#!/usr/local/bin/bash -x
+#!/usr/local/bin/bash 
 
 echo "Welcome to Arithmetic Computations Program "
 
@@ -8,22 +8,33 @@ read -p "Enter c:  " c
 
 declare -A Result
 
-First="$(( $a + $b * $c ))"
+Calc1="$(( $a + $b * $c ))"
 
-Second="$(( $a * $b + $c ))"
+Calc2="$(( $a * $b + $c ))"
 
-Third="$(( $c + $a / $b ))"
+Calc3="$(( $c + $a / $b ))"
 
-Fourth="$(( $a % $b + $c ))"
+Calc4="$(( $a % $b + $c ))"
 
-echo "First Computation is : $First"
+echo "First Computation is : $Calc1"
 
-echo "Second Computation is : $Second"
+echo "Second Computation is : $Calc2"
 
-echo "Third Computation is: $Third"
+echo "Third Computation is: $Calc3"
 
-echo "Fourth Computation is: $Fourth"
+echo "Fourth Computation is: $Calc4"
 
-Result=( ["First"]="$First" ["Second"]="$Second"  ["Third"]="$Third"  ["Fourth"]="$Fourth" )
+Result=( ["Calc1"]="$Calc1" ["Calc2"]="$Calc2"  ["Calc3"]="$Calc3"  ["Calc4"]="$Calc4" )
 
-echo "Results   ${Result[@]}" 
+echo "${!Result[@]}"
+
+echo "${Result[@]}" 
+
+for (( i=0; i<5; i++ )) 
+do
+	resultArr[$i]=${Result["Calc"$i]}
+done
+
+echo "${resultArr[@]}"
+
+
