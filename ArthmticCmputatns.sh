@@ -1,4 +1,4 @@
-#!/usr/local/bin/bash 
+#!/usr/local/bin/bash -x 
 
 echo "Welcome to Arithmetic Computations Program "
 
@@ -37,4 +37,17 @@ done
 
 echo "${resultArr[@]}"
 
+for (( j=1; j<5; j++ ))
+do
+     for (( k=$j+1; k<5; k++ ))
+     do
+           if [[ ${resultArr[$j]} -gt ${resultArr[$k]} ]];
+           then
+                temp=${resultArr[$j]}
+                resultArr[$j]=${resultArr[$k]}
+                resultArr[$k]=$temp
+           fi
+     done
+done
 
+echo "${resultArr[@]}"
